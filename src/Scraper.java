@@ -54,6 +54,7 @@ public class Scraper {
 				while (line != null) {
 
 					// Processing each line and splitting to separate words
+					// then storing those words into array
 
 					if (!line.trim().equals("")) {
 						String[] words = line.split(" ");
@@ -68,6 +69,9 @@ public class Scraper {
 							// Removing special characters
 							
 							processed = processed.replaceAll("[^a-zA-Z0-9]", "");
+							
+							// searching for current word in keyset
+							// if word is found, incrementing the integer value
 
 							if (frequency.containsKey(processed)) {
 								frequency.put(processed, frequency.get(processed) + 1);
@@ -86,6 +90,7 @@ public class Scraper {
 						
 				//System.out.println(frequency);
 				
+				// Finding most frequently used word by iterating over the keyset				
 				int mostFrequentlyUsed = 0;
 				String theWord = null;
 				
@@ -105,10 +110,7 @@ public class Scraper {
 				//System.out.println();
 				
 				
-				// Sort HashMap by keys						
-				
-								
-				
+				// Sort HashMap by keys											
 				TreeMap<String, Integer> sorted = new TreeMap<>(frequency);
 				Set<Entry<String, Integer>> mappings = sorted.entrySet();
 				
