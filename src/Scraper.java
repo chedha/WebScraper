@@ -112,11 +112,11 @@ public class Scraper {
 				TreeMap<String, Integer> sorted = new TreeMap<>(frequency);
 				Set<Entry<String, Integer>> mappings = sorted.entrySet();
 				
-				for(Entry<String, Integer> mapping : mappings) {
+				// for(Entry<String, Integer> mapping : mappings) {
 					
 					//System.out.println(mapping.getKey() + " ==> " + mapping.getValue());
 					
-				}
+			//	}
 				
 				//System.out.println();
 				//System.out.println();
@@ -142,10 +142,10 @@ public class Scraper {
 				//System.out.println("HashMap after sorting entries by values");
 				Set<Entry<String, Integer>> entrySetSortedByValue = sortedbyValue.entrySet();
 				
-				for(Entry<String, Integer> mapping : entrySetSortedByValue) {
+				// for(Entry<String, Integer> mapping : entrySetSortedByValue) {
 				//	System.out.println(mapping.getKey() + " ==> " + mapping.getValue());
 					
-				}
+				// }
 				
 				//System.out.println();
 				//System.out.println();
