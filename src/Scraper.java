@@ -25,18 +25,12 @@ public class Scraper {
 		
 		try {
 			Document doc = Jsoup.connect("https://www.gutenberg.org/files/1065/1065-h/1065-h.htm").get();
-			
-			System.out.printf("Title: %s\n", doc.title());
-			
+						
+						
 			Elements title = doc.getElementsByClass("center");
 			Elements author = doc.getElementsByClass("ph2");
 			Elements poem = doc.getElementsByClass("poem");
-			
-			System.out.println(title.text());
-			System.out.println(author.text());
-			System.out.println(poem.text());
-			
-			
+									
 			
 			try {
 				
@@ -70,6 +64,8 @@ public class Scraper {
 								continue;
 							}
 							String processed = word.toLowerCase();
+							
+							// Removing special characters
 							
 							processed = processed.replaceAll("[^a-zA-Z0-9]", "");
 
@@ -109,12 +105,9 @@ public class Scraper {
 				//System.out.println();
 				
 				
-				// Now let's sort HashMap by keys first
-				// all you need to do is create a TreeMap with mappings of HashMap
-				// TreeMap keeps all entries in sorted order		
+				// Sort HashMap by keys						
 				
-				
-				//System.out.println("HashMap after sorting by keys in ascending order ");
+								
 				
 				TreeMap<String, Integer> sorted = new TreeMap<>(frequency);
 				Set<Entry<String, Integer>> mappings = sorted.entrySet();
@@ -180,7 +173,7 @@ public class Scraper {
 		
 		
 		
-
+            // Comparator to sort entries by value
 	}
 	
 static Comparator<Entry<String, Integer>> valueComparator = new Comparator<Entry<String, Integer>>(){
