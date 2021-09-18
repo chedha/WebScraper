@@ -126,13 +126,17 @@ public class Scraper {
 				// need to create comparator
 				// that takes Map.Entry object and arranges them in order
 				// of increasing or decreasing value
-			
+				
+				// Converting Set to List to use Collections Sort method			
 				List<Entry<String, Integer>> listOfEntries = new ArrayList<Entry<String, Integer>>(mappings);
 				
+				// Sorting HashMap by values using comparator				
 				Collections.sort(listOfEntries, Collections.reverseOrder(valueComparator));
 				
 				LinkedHashMap<String, Integer> sortedbyValue = new LinkedHashMap<String, Integer>(listOfEntries.size());
 				
+				
+				// Copying entries from the sorted List to Map
 				for(Entry<String, Integer> entry: listOfEntries) {
 					
 					sortedbyValue.put(entry.getKey(), entry.getValue());
@@ -173,8 +177,10 @@ public class Scraper {
 		
 		
 		
-            // Comparator to sort entries by value
+            
 	}
+	
+	// Comparator to sort entries by value
 	
 static Comparator<Entry<String, Integer>> valueComparator = new Comparator<Entry<String, Integer>>(){
 		
